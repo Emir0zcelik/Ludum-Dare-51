@@ -1,0 +1,15 @@
+images {
+  image: "/images/01c42b2857a5344a1ef75bb74c7985f2.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/images (1).png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/images/b918860d89d6ce3139dc89f8a3843aa6.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+margin: 0
+extrude_borders: 2
+inner_padding: 0
