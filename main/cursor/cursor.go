@@ -1,6 +1,6 @@
 components {
   id: "cursor"
-  component: "/main/cursor/cursor.script"
+  component: "/in/cursor.script"
   position {
     x: 0.0
     y: 0.0
@@ -12,17 +12,22 @@ components {
     z: 0.0
     w: 1.0
   }
+  properties {
+    id: "acquire_input_focus"
+    value: "true"
+    type: PROPERTY_TYPE_BOOLEAN
+  }
 }
 embedded_components {
   id: "collisionobject"
   type: "collisionobject"
   data: "collision_shape: \"\"\n"
-  "type: COLLISION_OBJECT_TYPE_KINEMATIC\n"
+  "type: COLLISION_OBJECT_TYPE_TRIGGER\n"
   "mass: 0.0\n"
   "friction: 0.1\n"
   "restitution: 0.5\n"
-  "group: \"default\"\n"
-  "mask: \"default\"\n"
+  "group: \"cursor\"\n"
+  "mask: \"card\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"

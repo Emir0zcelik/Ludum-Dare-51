@@ -1,4 +1,15 @@
 function init(self)
+	go.property("card_type", 1)
+	
 	local pos = vmath.vector3(480, 540, 1)
 	go.set_position(pos)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("Attach") then
+		--go.set_position(go.get_position(), sender)
+
+	elseif message_id == hash("Deattach") then
+		print("deattach oldu")
+	end
 end

@@ -1,4 +1,30 @@
+local cursor = require "in.cursor"
+
 function init(self) 
+	go.property("card_type", 0)
 	local pos = vmath.vector3(960, 540, 1)
 	go.set_position(pos)
+
+	self.isAttached = false
+
+end
+
+function on_message(self, message_id, message, sender)
+	
+	if message_id == hash("trigger_response") and message.other_group == hash("card") then
+		local otherUrl = msg.url(message.other_id)
+		otherUrl.fragment = "script"
+		
+		if not message.enter then
+			self.isAttached = false
+			msg.post(otherUrl, "Deattach")
+		else
+			local otherType = go.get(otherUrl, "card_type")
+			if otherType == 1 then
+				
+				msg.post(otherUrl, "Attach")
+				self.isAttached = true
+			end
+		end
+	end
 end
