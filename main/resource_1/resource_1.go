@@ -34,7 +34,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "collisionobject"
+  id: "resourceObject"
   type: "collisionobject"
   data: "collision_shape: \"\"\n"
   "type: COLLISION_OBJECT_TYPE_KINEMATIC\n"

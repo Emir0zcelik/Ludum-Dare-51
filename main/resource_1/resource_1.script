@@ -1,5 +1,4 @@
 function init(self)
-
-	local pos = vmath.vector3(480, 540, 0)
+	local pos = vmath.vector3(480, 540, 1)
 	go.set_position(pos)
 end

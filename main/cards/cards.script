@@ -2,11 +2,3 @@ function init(self)
 	local pos = vmath.vector3(960, 540, 1)
 	go.set_position(pos)
 end
-
-function on_message(self, message_id, message, sender)
-	if message_id == hash("itemReleased") then
-		local pos = go.get_position()
-		
-		go.set_position()
-	end
-end
