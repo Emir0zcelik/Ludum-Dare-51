@@ -1,43 +1,43 @@
 images {
-  image: "/images/background.png"
+  image: "/Assets/images/background.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/images/resource-extractor.png"
+  image: "/Assets/images/resource-extractor.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/images/astronaut-idle.png"
+  image: "/Assets/images/astronaut-idle.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/images/main-screen.png"
+  image: "/Assets/images/main-screen.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/images/button-1-released.png"
+  image: "/Assets/images/button-1-released.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/images/button-2-released.png"
+  image: "/Assets/images/button-2-released.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/images/pause-button.png"
+  image: "/Assets/images/pause-button.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/images/play-button.png"
+  image: "/Assets/images/play-button.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 animations {
   id: "cursor"
   images {
-    image: "/images/cursor-idle.png"
+    image: "/Assets/images/cursor-idle.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   images {
-    image: "/images/cursor-hold.png"
+    image: "/Assets/images/cursor-hold.png"
     sprite_trim_mode: SPRITE_TRIM_MODE_OFF
   }
   playback: PLAYBACK_LOOP_FORWARD

@@ -1,11 +1,11 @@
-script: "/main/main_menu.gui_script"
+script: "/Assets/gui/main_menu.gui_script"
 fonts {
   name: "diary"
-  font: "/main/fonts/diary.font"
+  font: "/Assets/images/fonts/diary.font"
 }
 textures {
   name: "graphicAssets"
-  texture: "/main/graphicAssets.atlas"
+  texture: "/Assets/images/graphicAssets.atlas"
 }
 background_color {
   x: 0.0
@@ -67,6 +67,8 @@ nodes {
   template_node_child: false
   size_mode: SIZE_MODE_AUTO
   custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -132,6 +134,8 @@ nodes {
   text_leading: 1.0
   text_tracking: 0.0
   custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -187,6 +191,8 @@ nodes {
   template_node_child: false
   size_mode: SIZE_MODE_AUTO
   custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -252,6 +258,8 @@ nodes {
   text_leading: 1.0
   text_tracking: 0.0
   custom_type: 0
+  enabled: true
+  visible: true
 }
 nodes {
   position {
@@ -307,6 +315,8 @@ nodes {
   template_node_child: false
   size_mode: SIZE_MODE_AUTO
   custom_type: 0
+  enabled: true
+  visible: true
 }
 layers {
   name: "background"

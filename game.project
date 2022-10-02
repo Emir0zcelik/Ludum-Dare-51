@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /main/main_menu.collectionc
+main_collection = /Assets/scenes/start/main_menu.collectionc
 
 [script]
 shared_state = 1

@@ -1,7 +1,7 @@
-script: "/main/in_game.gui_script"
+script: "/Assets/gui/in_game.gui_script"
 textures {
   name: "graphicAssets"
-  texture: "/main/graphicAssets.atlas"
+  texture: "/Assets/images/graphicAssets.atlas"
 }
 background_color {
   x: 0.0
@@ -63,6 +63,8 @@ nodes {
   template_node_child: false
   size_mode: SIZE_MODE_AUTO
   custom_type: 0
+  enabled: true
+  visible: true
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

@@ -1,7 +1,7 @@
 name: "main"
 instances {
   id: "cards1"
-  prototype: "/main/cards/cards.go"
+  prototype: "/Assets/prefabs/cards/cards.go"
   position {
     x: 0.0
     y: 0.0
@@ -21,7 +21,7 @@ instances {
 }
 instances {
   id: "resource_1"
-  prototype: "/main/resource_1/resource_1.go"
+  prototype: "/Assets/prefabs/resource_1/resource_1.go"
   position {
     x: 0.0
     y: 0.0
@@ -41,7 +41,7 @@ instances {
 }
 instances {
   id: "cursor"
-  prototype: "/main/cursor/cursor.go"
+  prototype: "/Assets/prefabs/cursor/cursor.go"
   position {
     x: 0.0
     y: 0.0
@@ -107,7 +107,7 @@ embedded_instances {
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
-  "  data: \"tile_set: \\\"/main/graphicAssets.atlas\\\"\\n"
+  "  data: \"tile_set: \\\"/Assets/images/graphicAssets.atlas\\\"\\n"
   "default_animation: \\\"background\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
@@ -146,7 +146,7 @@ embedded_instances {
   id: "gui"
   data: "components {\n"
   "  id: \"in_game\"\n"
-  "  component: \"/main/in_game.gui\"\n"
+  "  component: \"/Assets/gui/in_game.gui\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -157,6 +157,8 @@ embedded_instances {
   "    y: 0.0\n"
   "    z: 0.0\n"
   "    w: 1.0\n"
+  "  }\n"
+  "  property_decls {\n"
   "  }\n"
   "}\n"
   ""
