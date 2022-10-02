@@ -1,0 +1,24 @@
+function init(self)
+	msg.post(".", "acquire_input_focus")
+end
+
+function on_input(self, action_id, action)
+	local node = gui.get_node("buttonStartStop")
+	if action.pressed and gui.pick_node(node, action.x, action.y) then
+		local flipbook = gui.get_flipbook(node)
+		if flipbook == hash("pause-button")  then
+			gui.play_flipbook(node, hash("play-button"))
+			msg.post("main_menu:/main#game_level_proxy", "set_time_step", {factor = 0, mode = 1})
+			msg.post("/cursor", "release_input_focus")
+		elseif flipbook == hash("play-button")then
+			gui.play_flipbook(node, hash("pause-button"))
+			msg.post("main_menu:/main#game_level_proxy", "set_time_step", {factor = 1, mode = 1})
+			msg.post("/cursor", "acquire_input_focus")
+		end
+		
+	end
+
+	if action.released and gui.pick_node(gui.get_node("buttonStartStop"), action.x, action.y) then
+		
+	end
+end

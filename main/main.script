@@ -11,7 +11,6 @@ function on_message(self, message_id, message, sender)
 				msg.post("game_level_proxy", "unload")
 			end
 		end
-
 		msg.post("#main_menu", "enable")
 		self.state = "MAIN_MENU"
 		
