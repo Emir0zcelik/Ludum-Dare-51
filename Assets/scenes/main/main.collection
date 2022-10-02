@@ -1,50 +1,98 @@
 name: "main"
 instances {
-  id: "cards1"
-  prototype: "/Assets/prefabs/cards/cards.go"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "resource_1"
-  prototype: "/Assets/prefabs/resource_1/resource_1.go"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
   id: "cursor"
   prototype: "/Assets/prefabs/cursor/cursor.go"
   position {
     x: 0.0
     y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "cursor"
+    properties {
+      id: "drag_threshold"
+      value: "5.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "astronot"
+  prototype: "/Assets/prefabs/cards/astronot/astronot.go"
+  position {
+    x: 266.0
+    y: 185.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "resource"
+  prototype: "/Assets/prefabs/cards/factories/resource/resource.go"
+  position {
+    x: 198.0
+    y: 124.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "resource1"
+  prototype: "/Assets/prefabs/cards/factories/resource/resource.go"
+  position {
+    x: 304.0
+    y: 124.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "astronot1"
+  prototype: "/Assets/prefabs/cards/astronot/astronot.go"
+  position {
+    x: 193.0
+    y: 185.0
     z: 0.0
   }
   rotation {
@@ -60,48 +108,6 @@ instances {
   }
 }
 scale_along_z: 0
-embedded_instances {
-  id: "cards"
-  children: "cards1"
-  data: ""
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-embedded_instances {
-  id: "resource"
-  children: "resource_1"
-  data: ""
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
 embedded_instances {
   id: "background"
   data: "embedded_components {\n"
@@ -128,7 +134,7 @@ embedded_instances {
   position {
     x: 240.0
     y: 135.0
-    z: 0.0
+    z: -1.0
   }
   rotation {
     x: 0.0

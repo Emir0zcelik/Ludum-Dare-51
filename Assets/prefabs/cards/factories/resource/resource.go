@@ -1,6 +1,6 @@
 components {
   id: "script"
-  component: "/Assets/prefabs/resource_1/resource_1.script"
+  component: "/Assets/prefabs/cards/factories/resource/resource.script"
   position {
     x: 0.0
     y: 0.0
@@ -37,13 +37,14 @@ embedded_components {
   id: "resourceObject"
   type: "collisionobject"
   data: "collision_shape: \"\"\n"
-  "type: COLLISION_OBJECT_TYPE_TRIGGER\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\n"
   "mass: 0.0\n"
   "friction: 0.1\n"
   "restitution: 0.5\n"
-  "group: \"card\"\n"
+  "group: \"factory\"\n"
   "mask: \"cursor\"\n"
   "mask: \"card\"\n"
+  "mask: \"factory\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"

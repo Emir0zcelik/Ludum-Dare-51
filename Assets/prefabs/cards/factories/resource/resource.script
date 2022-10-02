@@ -1,0 +1,40 @@
+function init(self)
+	go.property("card_type", 1)
+	go.property("time", 1)
+	go.property("isFull", false)
+
+	self.correction = vmath.vector3()
+	-- self.active_timer
+end
+
+function update(self, dt)
+	self.correction = vmath.vector3()
+end
+
+function on_message(self, message_id, message, sender)
+	-- Attach and detach
+	if message_id == hash("attach") then
+		self.isFull = true
+		self.active_timer = timer.delay(self.time, true, extract)
+	elseif message_id == hash("detach") then
+		self.isFull = false
+    	timer.cancel(self.active_timer)
+
+	 -- Handle collision
+	elseif message_id == hash("contact_point_response") then
+		if message.other_group == hash("factory") then
+			if message.distance > 0 then
+				local proj = vmath.project(self.correction, message.normal * message.distance)
+				if proj < 1 then
+					local comp = (message.distance - message.distance * proj) * message.normal
+					go.set_position(go.get_position() + comp)
+					self.correction = self.correction + comp
+				end
+			end
+		end
+	end
+end
+
+function extract(self)
+	print("asda")
+end

@@ -28,6 +28,7 @@ embedded_components {
   "restitution: 0.5\n"
   "group: \"cursor\"\n"
   "mask: \"card\"\n"
+  "mask: \"factory\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"

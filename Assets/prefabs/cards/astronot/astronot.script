@@ -1,0 +1,71 @@
+local cursor = require "in.cursor"
+
+local function attach(self)
+	go.set_position(vmath.vector3())
+	go.set_parent(".", self.in_url, false)
+
+	msg.post(self.in_url, "attach")
+
+	self.attached_url = self.in_url
+end
+
+function init(self) 
+	go.property("card_type", 0)
+
+	--self.in_url
+	--self.attached_url
+end
+
+function on_message(self, message_id, message, sender)
+	local other_url = msg.url(message.other_id)
+	other_url.fragment = "script"
+
+	-- If inside a factory while drag
+	if message_id == hash("trigger_response") then
+		if message.other_group == hash("factory") then
+
+			if go.get(other_url, "card_type") == 1 then
+				if message.enter then
+					-- If full
+					if go.get(other_url, "isFull") then
+						self.in_url = false
+					else
+						self.in_url = other_url
+					end
+
+				else
+					self.in_url = nil
+				end
+			end
+		end
+	
+	-- If detach
+	elseif message_id == cursor.DRAG then
+		if self.attached_url and not self.in_url then
+			msg.post(self.attached_url, "detach")
+
+			self.attached_url = nil
+		end
+	
+	-- If attach
+	elseif message_id == cursor.RELEASED then
+		-- If was not attached
+		if not self.attached_url and self.in_url then
+			attach(self)
+
+		-- If attached
+		elseif self.in_url then
+			-- Not the same
+			if self.in_url ~= self.attached_url then
+				msg.post(self.attached_url, "detach")
+
+				attach(self)
+
+			-- Same
+			else
+				go.set_position(vmath.vector3())
+			end
+		end
+	end
+end
+

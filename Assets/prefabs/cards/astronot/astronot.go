@@ -1,6 +1,6 @@
 components {
-  id: "cards"
-  component: "/Assets/prefabs/cards/cards.script"
+  id: "script"
+  component: "/Assets/prefabs/cards/astronot/astronot.script"
   position {
     x: 0.0
     y: 0.0
@@ -24,7 +24,7 @@ embedded_components {
   position {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: 0.5
   }
   rotation {
     x: 0.0
@@ -44,6 +44,7 @@ embedded_components {
   "group: \"card\"\n"
   "mask: \"card\"\n"
   "mask: \"cursor\"\n"
+  "mask: \"factory\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"
