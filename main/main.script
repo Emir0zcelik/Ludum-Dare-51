@@ -1,0 +1,32 @@
+function init(self)
+	msg.post(".", "start_main_menu")
+
+	self.state = "MAIN_MENU"
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("start_main_menu") then
+		if self.state ~= "MAIN_MENU" then
+			if self.state == "GAME_RUNNİNG" then
+				msg.post("game_level_proxy", "unload")
+			end
+		end
+
+		msg.post("#main_menu", "enable")
+		self.state = "MAIN_MENU"
+		
+	elseif message_id == hash("start_game") then
+		msg.post("#game_level_proxy", "load")
+		msg.post("#main_menu", "disable")
+		
+	elseif message_id == hash("start_settings") then
+		msg.post("#settings_proxy", "load")
+		msg.post("#main_menu", "disable")
+		
+	elseif message_id == hash("proxy_loaded") then
+		if sender == msg.url("#game_level_proxy") then
+			msg.post(sender, "enable")
+			self.state = "GAME_RUNNING"
+		end
+	end
+end

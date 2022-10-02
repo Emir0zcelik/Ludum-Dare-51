@@ -2,7 +2,7 @@ local cursor = require "in.cursor"
 
 function init(self) 
 	go.property("card_type", 0)
-	local pos = vmath.vector3(960, 540, 1)
+	local pos = vmath.vector3(240, 175, 1)
 	go.set_position(pos)
 
 	self.isAttached = false

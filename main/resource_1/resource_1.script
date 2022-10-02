@@ -1,7 +1,7 @@
 function init(self)
 	go.property("card_type", 1)
 	
-	local pos = vmath.vector3(480, 540, 1)
+	local pos = vmath.vector3(240, 135, 1)
 	go.set_position(pos)	
 end
 

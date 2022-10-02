@@ -1,17 +1,21 @@
 [bootstrap]
-main_collection = /main/main.collectionc
+main_collection = /main/main_menu.collectionc
 
 [script]
 shared_state = 1
 
 [display]
-width = 1920
-height = 1080
+width = 480
+height = 270
 
 [android]
 input_method = HiddenInputField
 
 [project]
-title = CollonySim
+title = ColonySim
 dependencies#0 = https://github.com/britzl/defold-input/archive/refs/tags/4.3.0.zip
+
+[graphics]
+default_texture_min_filter = nearest
+default_texture_mag_filter = nearest
 
