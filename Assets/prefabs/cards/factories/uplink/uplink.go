@@ -13,6 +13,11 @@ components {
     w: 1.0
   }
   properties {
+    id: "time"
+    value: "3.0"
+    type: PROPERTY_TYPE_NUMBER
+  }
+  properties {
     id: "factory_type"
     value: "3.0"
     type: PROPERTY_TYPE_NUMBER

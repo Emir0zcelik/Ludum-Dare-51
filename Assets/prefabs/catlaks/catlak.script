@@ -1,0 +1,21 @@
+local game_manager = require "assets/modules/game_manager"
+game_manager.catlaks = {}
+
+function init(self)
+    game_manager.catlaks[#game_manager.catlaks+1] = msg.url()
+
+    local sprites = {hash("catlak1"), hash("catlak2"), hash("catlak3"), hash("catlak4"),
+    hash("catlak4"), hash("catlak5"), hash("catlak6"), hash("catlak11"), hash("catlak12"),
+    hash("catlak13"), hash("catlak14")
+    }
+
+    sprite.play_flipbook("#sprite", sprites[math.random(#sprites)])
+
+    msg.post(".", "disable")
+end
+
+function on_message(self, message_id, message)
+    if message_id == hash("enable") then
+        msg.post(".", "enable")
+    end
+end

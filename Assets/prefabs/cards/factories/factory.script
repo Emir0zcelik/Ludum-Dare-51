@@ -6,6 +6,12 @@ function init(self)
 	go.property("factory_type", 1)
 	go.property("isFull", false)
     go.property("needed_amout", 2)
+    go.property("tutorial", false)
+
+    if self.tutorial then
+        game_manager.tutorial_fac = msg.url()
+        game_manager.tutorial_fac.fragment = "label_tutorial"
+    end
 
 	self.correction = vmath.vector3()
 
@@ -13,30 +19,34 @@ function init(self)
 
     if self.factory_type == 1 then
         self.on_sprite = hash("resource-extractor-on")
-        self.of_sprite = hash("resource-extractor")
+        self.off_sprite = hash("resource-extractor")
     elseif self.factory_type == 2 then
         self.on_sprite = hash("oxygen-cabin-on")
-        self.of_sprite = hash("oxygen-cabin")
+        self.off_sprite = hash("oxygen-cabin")
     elseif self.factory_type == 3 then
         self.on_sprite = hash("uplink-on")
-        self.of_sprite = hash("uplink")
+        self.off_sprite = hash("uplink")
     elseif self.factory_type == 4 then
         self.on_sprite = hash("o2-manufacturer")
-        self.of_sprite = hash("o2-manufacturer")
+        self.off_sprite = hash("o2-manufacturer")
         label.set_text("#label", self.needed_amout)
     elseif self.factory_type == 5 then
         self.on_sprite = hash("resource-manufacturer")
-        self.of_sprite = hash("resource-manufacturer")
+        self.off_sprite = hash("resource-manufacturer")
         label.set_text("#label", self.needed_amout)
     elseif self.factory_type == 6 then
         self.on_sprite = hash("uplink-manufacturer")
-        self.of_sprite = hash("uplink-manufacturer")
+        self.off_sprite = hash("uplink-manufacturer")
         label.set_text("#label", self.needed_amout)
     end
 end
 
 function update(self, dt)
 	self.correction = vmath.vector3()
+    if self.factory_type == 4 then
+        self.needed_amout = math.floor(game_manager.hard * 1.2) + 6
+        label.set_text("#label", self.needed_amout)
+    end
 end
 
 function on_message(self, message_id, message, sender)
@@ -46,6 +56,15 @@ function on_message(self, message_id, message, sender)
         sprite.play_flipbook("#sprite", self.on_sprite)
 
 		self.active_timer = timer.delay(self.time, true, game_manager.factory_jobs[self.factory_type])
+
+        if self.tutorial and game_manager.tutorial == 1 then
+            go.cancel_animations(game_manager.tutorial_fac, "color")
+            go.cancel_animations(game_manager.tutorial_but, "color")
+            go.animate(game_manager.tutorial_fac, "color.w", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_LINEAR, 1, 0, function ()
+                go.animate(game_manager.tutorial_but, "color.w", go.PLAYBACK_ONCE_FORWARD, 1, go.EASING_LINEAR, 1)
+            end)
+            game_manager.tutorial = 2
+        end
 	elseif message_id == hash("detach") then
 		self.isFull = false
         sprite.play_flipbook("#sprite", self.off_sprite)

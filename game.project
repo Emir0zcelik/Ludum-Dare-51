@@ -21,3 +21,7 @@ dependencies#1 = https://github.com/subsoap/defos/archive/refs/tags/v2.7.0.zip
 default_texture_min_filter = nearest
 default_texture_mag_filter = nearest
 
+[physics]
+max_collisions = 999999
+max_contacts = 199999928
+

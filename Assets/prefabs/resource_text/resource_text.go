@@ -23,9 +23,9 @@ embedded_components {
   "  w: 0.0\n"
   "}\n"
   "color {\n"
-  "  x: 0.0\n"
-  "  y: 1.0\n"
-  "  z: 0.0\n"
+  "  x: 0.6\n"
+  "  y: 0.8980392\n"
+  "  z: 0.3137255\n"
   "  w: 1.0\n"
   "}\n"
   "outline {\n"
@@ -59,5 +59,10 @@ embedded_components {
     y: 0.0
     z: 0.0
     w: 1.0
+  }
+  scale {
+    x: 1.2
+    y: 1.2
+    z: 1.2
   }
 }

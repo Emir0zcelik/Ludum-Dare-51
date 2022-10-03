@@ -1,13 +1,17 @@
 local M = {}
 
+M.hard = 0
+
 M.total_table = {
-    17, 30, 0
+    17, 30, 1
     -- [1] total_resource
     -- [2] total_o2
     -- [3] total_astronot
 }
 
-function M.init_game()
+function M.game_over()
+    M.total_table = {17, 30, 1}
+    M.hard = 0
 end
 
 -- Factory jobs
@@ -28,21 +32,21 @@ end
 M.factory_jobs[4] = function (self)
     if self.needed_amout <= M.total_table[1] then
         M.total_table[1] = M.total_table[1] - self.needed_amout
-        factory.create("#factory")
+        factory.create("#factory", go.get_position() + vmath.vector3(50 * math.random(-1, 1), 60 * math.random(-1, 1), 0))
     end
 end
 
 M.factory_jobs[5] = function (self)
     if self.needed_amout <= M.total_table[1] then
         M.total_table[1] = M.total_table[1] - self.needed_amout
-        factory.create("#factory")
+        factory.create("#factory", go.get_position() + vmath.vector3(50 * math.random(-1, 1), 60 * math.random(-1, 1), 0))
     end
 end
 
 M.factory_jobs[6] = function (self)
     if self.needed_amout <= M.total_table[1] then
         M.total_table[1] = M.total_table[1] - self.needed_amout
-        factory.create("#factory")
+        factory.create("#factory", go.get_position() + vmath.vector3(50 * math.random(-1, 1), 60 * math.random(-1, 1), 0))
     end
 end
 

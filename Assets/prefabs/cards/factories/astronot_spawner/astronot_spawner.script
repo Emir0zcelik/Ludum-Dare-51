@@ -1,11 +1,41 @@
 local game_manager = require "assets/modules/game_manager"
 local cursor = require "in.cursor"
 
+function init(self)
+    game_manager.tutorial_but = msg.url()
+    game_manager.tutorial_but.fragment = "tutorial_label"
+
+    game_manager.tutorial_o2 = msg.url()
+    game_manager.tutorial_o2.fragment = "tutorial_o2_label"
+end
+
 function on_message(self, message_id, message, sender)
-	if message_id == cursor.CLICKED then
+	if message_id == cursor.PRESSED then
         if 0 < game_manager.total_table[3] then
             game_manager.total_table[3] = game_manager.total_table[3] - 1
-            factory.create("#factory")
+            factory.create("#factory", vmath.vector3(math.random(120, 640), 440, 0), go.get_rotation(), nil, vmath.vector3(1, 1, 1))
+
+            if game_manager.tutorial == 2 then
+                go.animate(game_manager.tutorial_but, "color.w", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_LINEAR, 1, 0, function ()
+                    go.animate(game_manager.tutorial_o2, "color.w", go.PLAYBACK_ONCE_FORWARD, 1, go.EASING_LINEAR, 1, 0, function ()
+                        go.animate(game_manager.tutorial_o2, "color.w", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_LINEAR, 1, 2)
+                    end)
+                end)
+                game_manager.tutorial = 3
+            end
         end
+    
+    elseif message_id == cursor.PRESSED then
+        sprite.play_flipbook("#sprite", hash("button-astronaut-spawn-pressed"))
+    
+    elseif message_id == cursor.RELEASED then
+        sprite.play_flipbook("#sprite", hash("button-astronaut-spawn-normal"))
+
+    elseif message_id == cursor.OVER then
+        sprite.play_flipbook("#sprite", hash("button-astronaut-spawn-hover"))
+
+    elseif message_id == cursor.OUT then
+        sprite.play_flipbook("#sprite", hash("button-astronaut-spawn-normal"))
+
     end
 end

@@ -1,4 +1,5 @@
 local cursor = require "in.cursor"
+local game_manager = require "assets/modules/game_manager"
 
 local function attach(self)
 	go.set_position(vmath.vector3())
@@ -10,12 +11,23 @@ end
 
 function init(self) 
 	go.property("card_type", 2)
+    go.property("tutorial", false)
 
     self.last_frame_pos = go.get_position()
 	self.can_move = true
 
+    if not self.tutorial then
+        go.animate(".", "position.y", go.PLAYBACK_ONCE_FORWARD, math.random(30, 185), go.EASING_OUTBACK, 1, 0, function ()
+            sprite.play_flipbook("#sprite", hash("astronaut-idle"))
+            self.last_frame_pos = go.get_position()
+        end)
+    else
+        game_manager.tutorial = 0
+    end
+
 	--self.in_url
 	--self.attached_url
+    --self.timer
 end
 
 function update(self)
@@ -26,17 +38,21 @@ function update(self)
     
     -- Set animation
     local dist = go.get_position() - self.last_frame_pos
-    if (dist.x < dist.y) then
-        if (0 < dist.y) then
-            -- up
-        else
-            -- down
-        end
+    if self.attached_url then
+        sprite.play_flipbook("#sprite", hash("astronaut-working"))
     else
-        if (0 < dist.x) then
-            -- right
+        if (dist.x < dist.y) then
+            if (0 < dist.y) then
+                sprite.play_flipbook("#sprite", hash("astronaut-drag-up"))
+            else
+                sprite.play_flipbook("#sprite", hash("astronaut-drag-left"))
+            end
         else
-            -- left
+            if (0 < dist.x) then
+                sprite.play_flipbook("#sprite", hash("astronaut-drag-right"))
+            elseif dist ~= vmath.vector3(0, 0, 0) then
+                sprite.play_flipbook("#sprite", hash("astronaut-drag-down"))
+            end
         end
     end
 
@@ -70,10 +86,30 @@ function on_message(self, message_id, message, sender)
 
 	-- If pressed to this, let move freely
 	elseif message_id == cursor.PRESSED then
+        go.cancel_animations(".", "position")
 		self.can_move = true
+    
+    elseif message_id == cursor.DRAG_START then
+        if self.tutorial and game_manager.tutorial == 0 then
+            go.animate("#label", "color.w", go.PLAYBACK_ONCE_FORWARD, 0, go.EASING_LINEAR, 1, 0, function ()
+                if game_manager.tutorial == 1 then
+                    go.animate(game_manager.tutorial_fac, "color.w", go.PLAYBACK_ONCE_FORWARD, 1, go.EASING_LINEAR, 1)
+                end
+            end)
+            game_manager.tutorial = 1
+        end
 	
 	-- If attach
 	elseif message_id == cursor.RELEASED then
+        if self.timer then
+            timer.cancel(self.timer)
+        end
+        self.timer = timer.delay(0.5, false, function ()
+            sprite.play_flipbook("#sprite", hash("astronaut-idle"))
+            self.timer = false
+        end)
+
+        -- Movement
 		self.can_move = false
 
 		-- If was not attached

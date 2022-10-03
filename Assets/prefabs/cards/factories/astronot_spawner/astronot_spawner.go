@@ -40,8 +40,8 @@ embedded_components {
   "    index: 0\n"
   "    count: 3\n"
   "  }\n"
-  "  data: 27.3535\n"
-  "  data: 24.839\n"
+  "  data: 14.059\n"
+  "  data: 14.0395\n"
   "  data: 10.0\n"
   "}\n"
   "linear_damping: 0.0\n"
@@ -66,6 +66,26 @@ embedded_components {
   type: "factory"
   data: "prototype: \"/assets/prefabs/cards/astronot/astronot.go\"\n"
   "load_dynamically: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "sprite"
+  type: "sprite"
+  data: "tile_set: \"/assets/images/graphicAssets.atlas\"\n"
+  "default_animation: \"button-astronaut-spawn-normal\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
     x: 0.0

@@ -21,8 +21,19 @@ function init(self)
 end
 
 function update(self, dt)
+    local o2 = game_manager.total_table[self.resource_type]
     if self.resource_type == 2 then
-        local dif = game_manager.total_table[self.resource_type] - self.old_count
+        if o2 < 20 then
+            if o2 < 10 then
+                go.animate("#label", "color", go.PLAYBACK_ONCE_FORWARD, vmath.vector4(1, 0, 0, 1), go.EASING_INOUTSINE, 0.2)
+            else
+                go.animate("#label", "color", go.PLAYBACK_ONCE_FORWARD, vmath.vector4(1, 1, 0, 1), go.EASING_INOUTSINE, 0.2)
+            end
+        else
+            go.animate("#label", "color", go.PLAYBACK_ONCE_FORWARD, vmath.vector4(0.6, 0.898, 0.314, 1), go.EASING_INOUTSINE, 0.2)
+        end
+
+        local dif = o2 - self.old_count
         
         if 0 ~= dif and not self.timer then
             self.timer = timer.delay(0.01, false, function ()
@@ -30,6 +41,6 @@ function update(self, dt)
             end)
         end
     else
-        label.set_text(self.label_url, game_manager.total_table[self.resource_type])
+        label.set_text(self.label_url, o2)
     end
 end
