@@ -17,11 +17,6 @@ components {
     value: "4.0"
     type: PROPERTY_TYPE_NUMBER
   }
-  properties {
-    id: "needed_amout"
-    value: "3.0"
-    type: PROPERTY_TYPE_NUMBER
-  }
 }
 embedded_components {
   id: "resourceObject"

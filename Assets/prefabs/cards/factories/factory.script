@@ -11,7 +11,26 @@ function init(self)
 
 	-- self.active_timer
 
-    if self.factory_type == 4 then
+    if self.factory_type == 1 then
+        self.on_sprite = hash("resource-extractor-on")
+        self.of_sprite = hash("resource-extractor")
+    elseif self.factory_type == 2 then
+        self.on_sprite = hash("oxygen-cabin-on")
+        self.of_sprite = hash("oxygen-cabin")
+    elseif self.factory_type == 3 then
+        self.on_sprite = hash("uplink-on")
+        self.of_sprite = hash("uplink")
+    elseif self.factory_type == 4 then
+        self.on_sprite = hash("o2-manufacturer")
+        self.of_sprite = hash("o2-manufacturer")
+        label.set_text("#label", self.needed_amout)
+    elseif self.factory_type == 5 then
+        self.on_sprite = hash("resource-manufacturer")
+        self.of_sprite = hash("resource-manufacturer")
+        label.set_text("#label", self.needed_amout)
+    elseif self.factory_type == 6 then
+        self.on_sprite = hash("uplink-manufacturer")
+        self.of_sprite = hash("uplink-manufacturer")
         label.set_text("#label", self.needed_amout)
     end
 end
@@ -24,9 +43,13 @@ function on_message(self, message_id, message, sender)
 	-- Attach and detach
 	if message_id == hash("attach") then
 		self.isFull = true
+        sprite.play_flipbook("#sprite", self.on_sprite)
+
 		self.active_timer = timer.delay(self.time, true, game_manager.factory_jobs[self.factory_type])
 	elseif message_id == hash("detach") then
 		self.isFull = false
+        sprite.play_flipbook("#sprite", self.off_sprite)
+
     	timer.cancel(self.active_timer)
 
 	 -- Handle collision

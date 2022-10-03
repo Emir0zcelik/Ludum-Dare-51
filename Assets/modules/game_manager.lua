@@ -32,4 +32,18 @@ M.factory_jobs[4] = function (self)
     end
 end
 
+M.factory_jobs[5] = function (self)
+    if self.needed_amout <= M.total_table[1] then
+        M.total_table[1] = M.total_table[1] - self.needed_amout
+        factory.create("#factory")
+    end
+end
+
+M.factory_jobs[6] = function (self)
+    if self.needed_amout <= M.total_table[1] then
+        M.total_table[1] = M.total_table[1] - self.needed_amout
+        factory.create("#factory")
+    end
+end
+
 return M

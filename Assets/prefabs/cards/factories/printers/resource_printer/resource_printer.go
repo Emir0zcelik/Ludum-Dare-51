@@ -14,12 +14,7 @@ components {
   }
   properties {
     id: "factory_type"
-    value: "4.0"
-    type: PROPERTY_TYPE_NUMBER
-  }
-  properties {
-    id: "needed_amout"
-    value: "2.0"
+    value: "5.0"
     type: PROPERTY_TYPE_NUMBER
   }
 }

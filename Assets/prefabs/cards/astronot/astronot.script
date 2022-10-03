@@ -9,7 +9,7 @@ local function attach(self)
 end
 
 function init(self) 
-	go.property("card_type", 0)
+	go.property("card_type", 2)
 
     self.last_frame_pos = go.get_position()
 	self.can_move = true
