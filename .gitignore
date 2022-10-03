@@ -6,7 +6,6 @@
 Thumbs.db
 .lock-wscript
 *.pyc
-.project
 .cproject
 builtins
 log.txt
