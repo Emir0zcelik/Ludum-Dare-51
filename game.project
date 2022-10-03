@@ -25,3 +25,7 @@ default_texture_mag_filter = nearest
 max_collisions = 999999
 max_contacts = 199999928
 
+[html5]
+show_made_with_defold = 0
+show_console_banner = 0
+

@@ -14,7 +14,7 @@ components {
   }
   properties {
     id: "time"
-    value: "1.0"
+    value: "0.9"
     type: PROPERTY_TYPE_NUMBER
   }
   properties {

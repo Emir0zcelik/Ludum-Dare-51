@@ -44,7 +44,7 @@ end
 function update(self, dt)
 	self.correction = vmath.vector3()
     if self.factory_type == 4 then
-        self.needed_amout = math.floor(game_manager.hard * 1.2) + 6
+        self.needed_amout = math.floor(game_manager.hard) + 6
         label.set_text("#label", self.needed_amout)
     end
 end
