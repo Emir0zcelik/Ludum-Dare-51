@@ -1,5 +1,15 @@
 local game_manager = require "assets/modules/game_manager"
 
+local function make_it_harder(self)
+    timer.delay(1, true, function ()
+        game_manager.total_table[2] = game_manager.total_table[2] - 1
+
+        if game_manager.total_table[2] == 0 then
+            print("game over")
+        end
+    end)
+end
+
 function init(self)
 	msg.post(".", "start_main_menu")
 
@@ -22,13 +32,7 @@ function on_message(self, message_id, message, sender)
 		msg.post("#game_level_proxy", "load")
 		msg.post("#main_menu", "disable")
 
-        timer.delay(10, false, function ()
-            game_manager.total_table[2] = game_manager.total_table[2] - 1
-
-            if game_manager.total_table[2] == 0 then
-                print("game over")
-            end
-        end)
+        timer.delay(3, true, make_it_harder)
 		
 	elseif message_id == hash("start_settings") then
 		msg.post("#settings_proxy", "load")

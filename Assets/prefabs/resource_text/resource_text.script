@@ -1,12 +1,29 @@
 local game_manager = require "assets/modules/game_manager"
 
+local function change_text(self)
+    label.set_text(self.label_url, self.old_count - 1)
+    self.timer = nil
+
+    self.old_count = self.old_count - 1
+end
+
 function init(self)
     go.property("resource_type", 1)
 
+    self.old_count = game_manager.total_table[self.resource_type]
+
 	self.label_url = msg.url()
     self.label_url.fragment = "label"
+
+    --self.timer
+
+    label.set_text(self.label_url, self.old_count)
 end
 
 function update(self, dt)
-    label.set_text(self.label_url, game_manager.total_table[self.resource_type])
+    local dif = self.old_count - game_manager.total_table[self.resource_type]
+    
+    if 0 < dif and not self.timer then
+        self.timer = timer.delay(0.1, false, change_text)
+    end
 end

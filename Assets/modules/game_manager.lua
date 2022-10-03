@@ -1,7 +1,7 @@
 local M = {}
 
 M.total_table = {
-    0, 0, 0
+    0, 30, 0
     -- [1] total_resource
     -- [2] total_o2
     -- [3] total_astronot
