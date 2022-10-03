@@ -13,7 +13,7 @@ function init(self)
 
     self.last_frame_pos = go.get_position()
 	self.can_move = true
-	self.first_release_bug = true
+
 	--self.in_url
 	--self.attached_url
 end
@@ -48,28 +48,15 @@ function on_message(self, message_id, message, sender)
 	other_url.fragment = "script"
 
 	-- If inside a factory while drag
-	if message_id == hash("trigger_response") then
+	if message_id == hash("contact_point_response") then
 		if message.other_group == hash("factory") then
-
-			if go.get(other_url, "card_type") == 1 then
-				if message.enter then
-					-- If full
-					if go.get(other_url, "isFull") and other_url ~= self.in_url then
-                        print("full")
-						self.in_url = nil
-					else
-						self.in_url = other_url
-					end
-
-				else
-					if self.first_release_bug then
-						self.first_release_bug = false
-					else
-                        print("norm")
-						self.first_release_bug = true
-						self.in_url = nil
-					end
-				end
+            -- If not full
+            if 10 > message.distance then
+                self.in_url = nil
+			elseif go.get(other_url, "card_type") == 1 and not go.get(other_url, "isFull") then
+                if not go.get(other_url, "isFull") then
+                    self.in_url = other_url
+                end
 			end
 		end
 	
@@ -77,8 +64,6 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == cursor.DRAG then
 		if self.attached_url and not self.in_url then
 			msg.post(self.attached_url, "detach")
-
-			self.first_release_bug = true
 
 			self.attached_url = nil
 		end

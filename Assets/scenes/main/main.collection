@@ -48,131 +48,11 @@ instances {
   }
 }
 instances {
-  id: "resource"
-  prototype: "/assets/prefabs/cards/factories/resource/resource.go"
-  position {
-    x: 198.0
-    y: 124.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "resource1"
-  prototype: "/assets/prefabs/cards/factories/resource/resource.go"
-  position {
-    x: 304.0
-    y: 124.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
   id: "astronot1"
   prototype: "/assets/prefabs/cards/astronot/astronot.go"
   position {
     x: 193.0
     y: 185.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "o2_cabin"
-  prototype: "/assets/prefabs/cards/factories/o2_cabin/o2_cabin.go"
-  position {
-    x: 121.0
-    y: 64.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "o2_cabin1"
-  prototype: "/assets/prefabs/cards/factories/o2_cabin/o2_cabin.go"
-  position {
-    x: 367.0
-    y: 61.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "uplink"
-  prototype: "/assets/prefabs/cards/factories/uplink/uplink.go"
-  position {
-    x: 412.0
-    y: 284.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "uplink1"
-  prototype: "/assets/prefabs/cards/factories/uplink/uplink.go"
-  position {
-    x: 485.0
-    y: 204.0
     z: 0.0
   }
   rotation {
@@ -261,6 +141,46 @@ instances {
     x: 0.3
     y: 0.3
     z: 0.1
+  }
+}
+instances {
+  id: "o2_printer"
+  prototype: "/assets/prefabs/cards/factories/o2_printer/o2_printer.go"
+  position {
+    x: 564.0
+    y: 81.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "uplink_printer"
+  prototype: "/assets/prefabs/cards/factories/uplink_printer/uplink_printer.go"
+  position {
+    x: 492.0
+    y: 81.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
   }
 }
 scale_along_z: 0

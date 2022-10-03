@@ -21,9 +21,13 @@ function init(self)
 end
 
 function update(self, dt)
-    local dif = self.old_count - game_manager.total_table[self.resource_type]
-    
-    if 0 < dif and not self.timer then
-        self.timer = timer.delay(0.1, false, change_text)
+    if self.resource_type == 2 then
+        local dif = math.abs(self.old_count - game_manager.total_table[self.resource_type])
+        
+        if 0 < dif and not self.timer then
+            self.timer = timer.delay(0.1, false, change_text)
+        end
+    else
+        label.set_text(self.label_url, game_manager.total_table[self.resource_type])
     end
 end

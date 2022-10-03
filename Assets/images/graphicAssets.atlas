@@ -46,6 +46,14 @@ images {
   image: "/assets/images/uplink.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
+images {
+  image: "/assets/images/o2-manufacturer.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/images/uplink-manufacturer.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
 animations {
   id: "cursor"
   playback: PLAYBACK_LOOP_FORWARD

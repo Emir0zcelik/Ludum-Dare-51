@@ -32,7 +32,7 @@ function on_message(self, message_id, message, sender)
 		msg.post("#game_level_proxy", "load")
 		msg.post("#main_menu", "disable")
 
-        timer.delay(3, true, make_it_harder)
+        timer.delay(10, true, make_it_harder)
 		
 	elseif message_id == hash("start_settings") then
 		msg.post("#settings_proxy", "load")

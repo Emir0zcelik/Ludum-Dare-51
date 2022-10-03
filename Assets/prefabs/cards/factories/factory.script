@@ -5,9 +5,15 @@ function init(self)
 	go.property("time", 1)
 	go.property("factory_type", 1)
 	go.property("isFull", false)
+    go.property("needed_amout", 2)
 
 	self.correction = vmath.vector3()
+
 	-- self.active_timer
+
+    if self.factory_type == 4 then
+        label.set_text("#label", self.needed_amout)
+    end
 end
 
 function update(self, dt)
@@ -36,8 +42,4 @@ function on_message(self, message_id, message, sender)
 			end
 		end
 	end
-end
-
-local function extract(self)
-	print("asda")
 end
