@@ -3,7 +3,7 @@ main_collection = /assets/scenes/start/main_menu.collectionc
 render = /assets/render/LD.renderc
 
 [script]
-shared_state = 1
+shared_state = 2
 
 [display]
 width = 720
