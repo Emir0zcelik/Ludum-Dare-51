@@ -1,5 +1,13 @@
+local cursor = require "in.cursor"
+
 function init(self)
 	msg.post(".", "acquire_input_focus")
+
+    cursor.listen(msg.url("#cursor"), cursor.DRAG_START, function(message_id, message)
+		if message.id == hash("/astronot_spawner") then
+			return true
+		end
+	end)
 end
 
 function on_input(self, action_id, action)

@@ -19,7 +19,7 @@ components {
   }
   properties {
     id: "needed_amout"
-    value: "6.0"
+    value: "5.0"
     type: PROPERTY_TYPE_NUMBER
   }
 }

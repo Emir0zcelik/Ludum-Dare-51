@@ -1,0 +1,11 @@
+local game_manager = require "assets/modules/game_manager"
+local cursor = require "in.cursor"
+
+function on_message(self, message_id, message, sender)
+	if message_id == cursor.CLICKED then
+        if 0 < game_manager.total_table[3] then
+            game_manager.total_table[3] = game_manager.total_table[3] - 1
+            factory.create("#factory")
+        end
+    end
+end
