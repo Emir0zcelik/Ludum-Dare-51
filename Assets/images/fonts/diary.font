@@ -1,4 +1,4 @@
-font: "/Assets/images/fonts/Diary of an 8-bit mage.otf"
+font: "/assets/images/fonts/Diary of an 8-bit mage.otf"
 material: "/builtins/fonts/font.material"
 size: 48
 antialias: 1

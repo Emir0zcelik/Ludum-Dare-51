@@ -1,12 +1,13 @@
 [bootstrap]
-main_collection = /Assets/scenes/start/main_menu.collectionc
+main_collection = /assets/scenes/start/main_menu.collectionc
+render = /assets/render/LD.renderc
 
 [script]
 shared_state = 1
 
 [display]
-width = 480
-height = 270
+width = 720
+height = 405
 
 [android]
 input_method = HiddenInputField
@@ -14,6 +15,7 @@ input_method = HiddenInputField
 [project]
 title = ColonySim
 dependencies#0 = https://github.com/britzl/defold-input/archive/refs/tags/4.3.0.zip
+dependencies#1 = https://github.com/subsoap/defos/archive/refs/tags/v2.7.0.zip
 
 [graphics]
 default_texture_min_filter = nearest

@@ -1,5 +1,9 @@
+local game_manager = require "assets/modules/game_manager"
+
 function init(self)
 	msg.post(".", "start_main_menu")
+
+    defos.set_cursor_visible(false)
 
 	self.state = "MAIN_MENU"
 end
@@ -17,6 +21,14 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == hash("start_game") then
 		msg.post("#game_level_proxy", "load")
 		msg.post("#main_menu", "disable")
+
+        timer.delay(10, false, function ()
+            game_manager.total_table[2] = game_manager.total_table[2] - 1
+
+            if game_manager.total_table[2] == 0 then
+                print("game over")
+            end
+        end)
 		
 	elseif message_id == hash("start_settings") then
 		msg.post("#settings_proxy", "load")

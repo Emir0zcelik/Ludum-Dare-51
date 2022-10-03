@@ -1,6 +1,6 @@
 components {
   id: "script"
-  component: "/Assets/prefabs/cards/astronot/astronot.script"
+  component: "/assets/prefabs/cards/astronot/astronot.script"
   position {
     x: 0.0
     y: 0.0
@@ -16,7 +16,7 @@ components {
 embedded_components {
   id: "sprite"
   type: "sprite"
-  data: "tile_set: \"/Assets/images/graphicAssets.atlas\"\n"
+  data: "tile_set: \"/assets/images/graphicAssets.atlas\"\n"
   "default_animation: \"astronaut-idle\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"

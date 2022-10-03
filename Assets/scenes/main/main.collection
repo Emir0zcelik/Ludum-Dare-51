@@ -1,7 +1,7 @@
 name: "main"
 instances {
   id: "cursor"
-  prototype: "/Assets/prefabs/cursor/cursor.go"
+  prototype: "/assets/prefabs/cursor/cursor.go"
   position {
     x: 0.0
     y: 0.0
@@ -29,7 +29,7 @@ instances {
 }
 instances {
   id: "astronot"
-  prototype: "/Assets/prefabs/cards/astronot/astronot.go"
+  prototype: "/assets/prefabs/cards/astronot/astronot.go"
   position {
     x: 266.0
     y: 185.0
@@ -49,7 +49,7 @@ instances {
 }
 instances {
   id: "resource"
-  prototype: "/Assets/prefabs/cards/factories/resource/resource.go"
+  prototype: "/assets/prefabs/cards/factories/resource/resource.go"
   position {
     x: 198.0
     y: 124.0
@@ -69,7 +69,7 @@ instances {
 }
 instances {
   id: "resource1"
-  prototype: "/Assets/prefabs/cards/factories/resource/resource.go"
+  prototype: "/assets/prefabs/cards/factories/resource/resource.go"
   position {
     x: 304.0
     y: 124.0
@@ -89,7 +89,7 @@ instances {
 }
 instances {
   id: "astronot1"
-  prototype: "/Assets/prefabs/cards/astronot/astronot.go"
+  prototype: "/assets/prefabs/cards/astronot/astronot.go"
   position {
     x: 193.0
     y: 185.0
@@ -107,13 +107,169 @@ instances {
     z: 1.0
   }
 }
+instances {
+  id: "o2_cabin"
+  prototype: "/assets/prefabs/cards/factories/o2_cabin/o2_cabin.go"
+  position {
+    x: 121.0
+    y: 64.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "o2_cabin1"
+  prototype: "/assets/prefabs/cards/factories/o2_cabin/o2_cabin.go"
+  position {
+    x: 367.0
+    y: 61.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "uplink"
+  prototype: "/assets/prefabs/cards/factories/uplink/uplink.go"
+  position {
+    x: 412.0
+    y: 284.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "uplink1"
+  prototype: "/assets/prefabs/cards/factories/uplink/uplink.go"
+  position {
+    x: 485.0
+    y: 204.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "resource_text"
+  prototype: "/assets/prefabs/resource_text/resource_text.go"
+  position {
+    x: 521.0
+    y: 353.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "resource_text"
+    properties {
+      id: "resource_type"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 0.3
+    y: 0.3
+    z: 0.1
+  }
+}
+instances {
+  id: "resource_text1"
+  prototype: "/assets/prefabs/resource_text/resource_text.go"
+  position {
+    x: 600.0
+    y: 364.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.3
+    y: 0.3
+    z: 0.1
+  }
+}
+instances {
+  id: "resource_text2"
+  prototype: "/assets/prefabs/resource_text/resource_text.go"
+  position {
+    x: 679.0
+    y: 346.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "resource_text"
+    properties {
+      id: "resource_type"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 0.3
+    y: 0.3
+    z: 0.1
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "background"
   data: "embedded_components {\n"
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
-  "  data: \"tile_set: \\\"/Assets/images/graphicAssets.atlas\\\"\\n"
+  "  data: \"tile_set: \\\"/assets/images/graphicAssets.atlas\\\"\\n"
   "default_animation: \\\"background\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
@@ -132,8 +288,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 240.0
-    y: 135.0
+    x: 360.0
+    y: 202.5
     z: -1.0
   }
   rotation {
@@ -143,16 +299,16 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 1.5
+    y: 1.5
+    z: 2.0
   }
 }
 embedded_instances {
   id: "gui"
   data: "components {\n"
   "  id: \"in_game\"\n"
-  "  component: \"/Assets/gui/in_game.gui\"\n"
+  "  component: \"/assets/gui/in_game.gui\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"

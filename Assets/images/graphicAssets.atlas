@@ -1,45 +1,53 @@
 images {
-  image: "/Assets/images/background.png"
+  image: "/assets/images/background.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/Assets/images/resource-extractor.png"
+  image: "/assets/images/resource-extractor.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/Assets/images/astronaut-idle.png"
+  image: "/assets/images/astronaut-idle.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/Assets/images/main-screen.png"
+  image: "/assets/images/main-screen.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/Assets/images/button-1-released.png"
+  image: "/assets/images/button-1-released.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/Assets/images/button-2-released.png"
+  image: "/assets/images/button-2-released.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/Assets/images/pause-button.png"
+  image: "/assets/images/pause-button.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/Assets/images/play-button.png"
+  image: "/assets/images/play-button.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/images/oxygen-cabin.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/images/cursor-idle.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/images/cursor-hold.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
+}
+images {
+  image: "/assets/images/uplink.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 animations {
   id: "cursor"
-  images {
-    image: "/Assets/images/cursor-idle.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
-  images {
-    image: "/Assets/images/cursor-hold.png"
-    sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-  }
   playback: PLAYBACK_LOOP_FORWARD
   fps: 2
   flip_horizontal: 0

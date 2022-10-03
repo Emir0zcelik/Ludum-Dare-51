@@ -12,12 +12,17 @@ components {
     z: 0.0
     w: 1.0
   }
+  properties {
+    id: "factory_type"
+    value: "3.0"
+    type: PROPERTY_TYPE_NUMBER
+  }
 }
 embedded_components {
   id: "sprite"
   type: "sprite"
   data: "tile_set: \"/assets/images/graphicAssets.atlas\"\n"
-  "default_animation: \"resource-extractor\"\n"
+  "default_animation: \"uplink\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
@@ -70,6 +75,24 @@ embedded_components {
   "angular_damping: 0.0\n"
   "locked_rotation: false\n"
   "bullet: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "factory"
+  type: "factory"
+  data: "prototype: \"/assets/prefabs/cards/astronot/astronot.go\"\n"
+  "load_dynamically: false\n"
   ""
   position {
     x: 0.0

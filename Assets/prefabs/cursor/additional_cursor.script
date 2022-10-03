@@ -1,0 +1,11 @@
+function init(self)
+	msg.post(".", "acquire_input_focus")
+end
+
+function on_input(self, action_id, action)
+	if action.pressed then
+        sprite.play_flipbook("#sprite", hash("cursor-hold"))
+    elseif action.released then
+        sprite.play_flipbook("#sprite", hash("cursor-idle"))
+    end
+end

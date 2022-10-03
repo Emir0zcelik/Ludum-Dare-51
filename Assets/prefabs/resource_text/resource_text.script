@@ -1,0 +1,12 @@
+local game_manager = require "assets/modules/game_manager"
+
+function init(self)
+    go.property("resource_type", 1)
+
+	self.label_url = msg.url()
+    self.label_url.fragment = "label"
+end
+
+function update(self, dt)
+    label.set_text(self.label_url, game_manager.total_table[self.resource_type])
+end

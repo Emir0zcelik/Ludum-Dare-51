@@ -1,11 +1,11 @@
-script: "/Assets/gui/main_menu.gui_script"
+script: "/assets/gui/main_menu.gui_script"
 fonts {
   name: "diary"
-  font: "/Assets/images/fonts/diary.font"
+  font: "/assets/images/fonts/diary.font"
 }
 textures {
   name: "graphicAssets"
-  texture: "/Assets/images/graphicAssets.atlas"
+  texture: "/assets/images/graphicAssets.atlas"
 }
 background_color {
   x: 0.0
@@ -15,9 +15,9 @@ background_color {
 }
 nodes {
   position {
-    x: 400.0
-    y: 200.0
-    z: 0.0
+    x: 620.0
+    y: 315.0
+    z: 1.0
     w: 1.0
   }
   rotation {
@@ -27,9 +27,9 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 1.5
+    y: 1.5
+    z: 1.5
     w: 1.0
   }
   size {
@@ -86,7 +86,7 @@ nodes {
   scale {
     x: 0.3
     y: 0.3
-    z: 1.0
+    z: 0.3
     w: 1.0
   }
   size {
@@ -139,9 +139,9 @@ nodes {
 }
 nodes {
   position {
-    x: 400.0
-    y: 160.0
-    z: 0.0
+    x: 620.0
+    y: 240.0
+    z: 1.0
     w: 1.0
   }
   rotation {
@@ -151,9 +151,9 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 1.5
+    y: 1.5
+    z: 1.5
     w: 1.0
   }
   size {
@@ -210,7 +210,7 @@ nodes {
   scale {
     x: 0.3
     y: 0.3
-    z: 1.0
+    z: 0.3
     w: 1.0
   }
   size {
@@ -263,8 +263,8 @@ nodes {
 }
 nodes {
   position {
-    x: 240.0
-    y: 135.0
+    x: 360.0
+    y: 202.5
     z: 0.0
     w: 1.0
   }
@@ -275,9 +275,9 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.2
-    y: 1.2
-    z: 1.0
+    x: 1.5
+    y: 1.5
+    z: 1.5
     w: 1.0
   }
   size {
