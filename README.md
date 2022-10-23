@@ -13,7 +13,7 @@ We made this game for LD51.
 
 @Sayuri elgunalp1@gmail.com
 
-Ege Esin (itch.io) (Website) (GitHub)
+Ege Esin
 
 Gülfem Yurtkuran
 
