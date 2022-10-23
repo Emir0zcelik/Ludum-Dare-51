@@ -15,9 +15,9 @@ We made this game for LD51.
 
 Ege Esin (itch.io) (Website) (GitHub)
 
-Gulhan
+Gülfem Yurtkuran
 
-Emir Ozcelik
+@Emir0zcelik themirozcelik@gmail.com
 
 Github link for spaghetti code
 
